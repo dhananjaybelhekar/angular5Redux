@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-import { Store} from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
 
-interface TitleInt{
-	title:string;
-}
 
 @Component({
   selector: 'app-root',
@@ -13,17 +8,11 @@ interface TitleInt{
 })
 export class AppComponent {
 
-  title$:Observable<string>;
+  title:string;
 
-  constructor(private store:Store<TitleInt>){
-  		this.title$ = this.store.select('title');
+  constructor(){
+ 	this.title = "123" 		;
   }
-  marathiMsg(){
-  		console.log("marathiMsg");
-  		this.store.dispatch({type:'hii'});
-  }
-  englishMsg(){
-  		console.log("englishMsg");
-		this.store.dispatch({type:'bye'});
-  }
+
+  
 }
